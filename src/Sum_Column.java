@@ -24,11 +24,23 @@ public class Sum_Column {
 		   }
 		   System.out.println(); //prints a new line after current array/row has its values printed
 		}
+		sumColumn(array);
 	}
 	
-//	public void sumColumn(int[][] arr) 
-//	{
-//		
-//	}
+	public static void sumColumn(int[][] arr) 
+	{
+		int sum = 0; // try creating an array to store sums; then create a loop to print values
+		for(int row = 0; row < arr.length; row++) 
+		{
+			for(int column = 0; column < arr[0].length; column++)
+			{
+				int firstCol = arr[row][0];
+				sum = sum + firstCol;
+			}
+			
+			
+			System.out.println("Sum of column " + row + " is " + sum);
+		}
+	}
 
 }
