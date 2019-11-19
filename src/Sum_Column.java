@@ -29,17 +29,19 @@ public class Sum_Column {
 	
 	public static void sumColumn(int[][] arr) 
 	{
-		int sum = 0; // try creating an array to store sums; then create a loop to print values
-		for(int row = 0; row < arr.length; row++) 
+		 // try creating an array to store sums; then create a loop to print values
+		int [] columnSum = new int [4];
+		for(int j = 0; j < arr[0].length; j++) 
 		{
-			for(int column = 0; column < arr[0].length; column++)
+			int sum = 0;
+			for(int i = 0; i < arr.length; i++)
 			{
-				int firstCol = arr[row][0];
-				sum = sum + firstCol;
+				int firstVal = arr[i][0];
+				sum = sum + firstVal;
+				System.out.println("sum in column " + j + " are " + sum);
+				columnSum[j] = sum;
 			}
-			
-			
-			System.out.println("Sum of column " + row + " is " + sum);
+			System.out.println("Column Sum is " + columnSum[j]);
 		}
 	}
 
