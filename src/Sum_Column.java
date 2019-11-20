@@ -29,19 +29,19 @@ public class Sum_Column {
 	
 	public static void sumColumn(int[][] arr) 
 	{
-		 // try creating an array to store sums; then create a loop to print values
-		int [] columnSum = new int [4];
-		for(int j = 0; j < arr[0].length; j++) 
+		int [] columnSum = new int [arr[0].length]; //creates an array to hold the sum values
+		int columnIndex = 0; //initial column index; outside loop so value will stay updated
+		for(int i = 0; i < arr[0].length; i++) //outer loop to cycle through column index
 		{
-			int sum = 0;
-			for(int i = 0; i < arr.length; i++)
-			{
-				int firstVal = arr[i][0];
-				sum = sum + firstVal;
-				System.out.println("sum in column " + j + " are " + sum);
-				columnSum[j] = sum;
-			}
-			System.out.println("Column Sum is " + columnSum[j]);
+			int sum = 0; //sum in outer loop to reinitialize every column
+			for(int rowIndex = 0; rowIndex < arr.length; rowIndex++) //inner loop to cycle through row index; inner loop will complete before going to next iteration of outer loop
+				{
+					int value = arr[rowIndex][columnIndex]; //creates a variable to store value of current row and column
+					sum = sum + value; //updates sum to be the total of the stored values
+					columnSum[i] = sum; //fills columnSum array at index i to hold current value of sum; last/final value of sum will be the value for that index in columnSum
+				}
+			System.out.println("Sum of column " + i + " is " + sum); //prints current column and the final sum for that column
+			columnIndex++; //moves to next column
 		}
 	}
 
